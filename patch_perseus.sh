@@ -29,12 +29,12 @@ if [ ! -f "com.bilibili.AzurLane.apk" ]; then
 
     # eg: wget "your download link" -O "your packge name.apk" -q
     #if you want to patch .xapk, change the suffix here to wget "your download link" -O "your packge name.xapk" -q
-    wget https://pkg.biligame.com/games/blhx_8.1.1_20240426_1_20240429_053419_20cea.apk -O com.bilibili.AzurLane.apk -q
+    wget https://d.apkpure.com/b/XAPK/com.YoStarEN.AzurLane?version=latest -O com.YoStarEN.AzurLane.xapk -q
     echo "apk downloaded !"
     
     # if you can only download .xapk file uncomment 2 lines below. (delete the '#')
-    #unzip -o com.YoStarJP.AzurLane.xapk -d AzurLane
-    #cp AzurLane/com.YoStarJP.AzurLane.apk .
+    unzip -o com.YoStarEN.AzurLane.xapk -d AzurLane
+    cp AzurLane/com.YoStarEN.AzurLane.apk .
 fi
 
 # Download Perseus
@@ -44,7 +44,7 @@ if [ ! -d "Perseus" ]; then
 fi
 
 echo "Decompile Azur Lane apk"
-java -jar apktool.jar -q -f d com.bilibili.AzurLane.apk
+java -jar apktool.jar -q -f d com.YoStarEN.AzurLane.apk
 
 echo "Copy Perseus libs"
 cp -r Perseus/. com.bilibili.AzurLane/lib/
